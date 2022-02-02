@@ -1,23 +1,19 @@
 import React from "react";
-import {Link, Outlet} from "react-router-dom";
+import {Link} from "react-router-dom";
+import {path} from "../App";
 
 export const Header = () => {
     return (
-        <div>
+        <header>
             <ul>
-                <li><Link to='/'>Home</Link></li>
-                <li><Link to='/profile'>Profile</Link></li>
-                <li><Link to='/login'>Login</Link></li>
-                <li><Link to='/test'>Test</Link></li>
-                <li><Link to='/password-recovery'>Password Recovery</Link></li>
-                <li><Link to='/new-password'>New Password</Link></li>
-                <li><Link to='/registration'>Registration</Link></li>
+                <li><Link to={path.home}>Home</Link></li>
+                <li><Link to={path.profile}>Profile</Link></li>
+                <li><Link to={path.login}>Login</Link></li>
+                <li><Link to={path.passwordRecovery}>Password Recovery</Link></li>
+                <li><Link to={path.newPassword}>New Password</Link></li>
+                <li><Link to={path.registration}>Registration</Link></li>
+                <li><Link to={path.test}>Test</Link></li>
             </ul>
-
-            <Outlet />
-
-            <footer>2022</footer>
-
-        </div>
+        </header>
     )
 }
