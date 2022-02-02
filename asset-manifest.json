@@ -1,12 +1,12 @@
 {
   "files": {
     "main.css": "/friday-project/static/css/main.31d6cfe0.css",
-    "main.js": "/friday-project/static/js/main.75d8d3bf.js",
+    "main.js": "/friday-project/static/js/main.486798d6.js",
     "index.html": "/friday-project/index.html",
-    "main.75d8d3bf.js.map": "/friday-project/static/js/main.75d8d3bf.js.map"
+    "main.486798d6.js.map": "/friday-project/static/js/main.486798d6.js.map"
   },
   "entrypoints": [
     "static/css/main.31d6cfe0.css",
-    "static/js/main.75d8d3bf.js"
+    "static/js/main.486798d6.js"
   ]
 }
