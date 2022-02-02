@@ -11,31 +11,20 @@ import {Profile} from "./routes/profile";
 import {Test} from "./routes/test";
 
 
-const prjName = '/friday-project'
-export const PATH = {
-    HOME: prjName + '/',
-    LOGIN:  prjName + '/login',
-    REGISTRATION: prjName +  '/registration',
-    NEW_PASSWORD: prjName +  '/new-password',
-    PASSWORD_RECOVERY:  prjName + '/password-recovery',
-    PROFILE:  prjName +  '/profile',
-    TEST:  prjName + '/test',
-}
-
 function App() {
     return (<>
-            <Header/>
-
-                <Routes>
-                    <Route path={PATH.HOME} element={<Login/>}/>
-                    <Route path={PATH.LOGIN} element={<Login/>}/>
-                    <Route path={PATH.REGISTRATION} element={<Registration/>}/>
-                    <Route path={PATH.PASSWORD_RECOVERY} element={<PasswordRecovery/>}/>
-                    <Route path={PATH.NEW_PASSWORD} element={<NewPassword/>}/>
-                    <Route path={PATH.PROFILE} element={<Profile/>}/>
-                    <Route path={PATH.TEST} element={<Test/>}/>
+            <Routes>
+                <Route path={'/'} element={<Header />}>
+                    <Route index element={<Login/>}/>
+                    <Route path='login' element={<Login/>}/>
+                    <Route path='registration' element={<Registration/>}/>
+                    <Route path='password-recovery' element={<PasswordRecovery/>}/>
+                    <Route path='new-password' element={<NewPassword/>}/>
+                    <Route path='profile' element={<Profile/>}/>
+                    <Route path='test' element={<Test/>}/>
                     <Route path='*' element={<Page404/>}/>
-                </Routes>
+                </Route>
+            </Routes>
 
         </>
     );
