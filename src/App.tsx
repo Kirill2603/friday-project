@@ -11,21 +11,20 @@ import {Profile} from "./pages/profile";
 import {Test} from "./pages/test";
 import {Home} from "./pages/home";
 
-const homePageName = '/friday-project'
 export const path = {
-    home: homePageName + '/' ,
-    login: homePageName + '/login' ,
-    registration: homePageName + '/registration' ,
-    passwordRecovery: homePageName + '/password-recovery' ,
-    newPassword: homePageName + '/new-password' ,
-    profile: homePageName + '/profile' ,
-    test: homePageName + '/test' ,
+    home: '/' ,
+    login: '/login' ,
+    registration: '/registration' ,
+    passwordRecovery: '/password-recovery' ,
+    newPassword: '/new-password' ,
+    profile: '/profile' ,
+    test: '/test' ,
 }
 
 function App() {
     return (<>
             <Routes>
-                <Route path={homePageName} element={<Layout />}>
+                <Route path={'/'} element={<Layout />}>
                     <Route index element={<Home/>}/>
                     <Route path={path.login} element={<Login/>}/>
                     <Route path={path.registration} element={<Registration/>}/>
