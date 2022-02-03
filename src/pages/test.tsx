@@ -2,11 +2,12 @@ import React from "react";
 import {CustomButton} from "../custom-components/custom-button";
 import {CustomInput} from "../custom-components/custom-input";
 import {CustomCheckbox} from "../custom-components/custom-checkbox";
+import {CustomEditableSpan} from "../custom-components/custom-editable-span";
 
 export const Test = () => {
 
     const callback = (value: string) => {
-      console.log(value)
+        console.log(value)
     }
 
     return (<>
@@ -22,23 +23,34 @@ export const Test = () => {
 
             <hr/>
 
-            <div style={{padding: '20px'}}>
+            <div style={{padding: '10px'}}>
+
                 <h2>Inputs</h2>
 
-                <h3>Default</h3>
-                <CustomInput onChangeOption={callback}/>
+                <div style={{padding: '10px'}}>
+                    <h3>Default</h3>
+                    <CustomInput onChangeOption={callback}/>
+                </div>
 
-                <h3>Controlled value</h3>
-                <CustomInput value={"Value"} onChangeOption={callback}/>
+                <div style={{padding: '10px'}}>
+                    <h3>Controlled value</h3>
+                    <CustomInput value={"Value"} onChangeOption={callback}/>
+                </div>
 
-                <h3>Controlled placeholder</h3>
-                <CustomInput placeholder={"Enter your text"} onChangeOption={callback}/>
+                <div style={{padding: '10px'}}>
+                    <h3>Controlled placeholder</h3>
+                    <CustomInput placeholder={"Enter your text"} onChangeOption={callback}/>
+                </div>
 
-                <h3>Disabled</h3>
-                <CustomInput disabled/>
+                <div style={{padding: '10px'}}>
+                    <h3>Disabled</h3>
+                    <CustomInput disabled/>
+                </div>
 
-                <h3>Error</h3>
-                <CustomInput error={'Error message'} onChangeOption={callback}/>
+                <div style={{padding: '10px'}}>
+                    <h3>Error</h3>
+                    <CustomInput error={'Error message'} onChangeOption={callback}/>
+                </div>
             </div>
 
             <hr/>
@@ -46,17 +58,47 @@ export const Test = () => {
             <div style={{padding: '20px'}}>
                 <h2>CheckBoxes</h2>
 
-                <h3>Default</h3>
-                <CustomCheckbox onChangeOption={callback}/>
+                <div style={{padding: '10px'}}>
+                    <h3>Default</h3>
+                    <CustomCheckbox onChangeOption={callback}/>
+                </div>
 
-                <h3>Checked</h3>
-                <CustomCheckbox checked={true} onChangeOption={callback}/>
+                <div style={{padding: '10px'}}>
+                    <h3>Checked</h3>
+                    <CustomCheckbox checked={true} onChangeOption={callback}/>
+                </div>
 
-                <h3>With title</h3>
-                <CustomCheckbox title={'Checkbox title'} onChangeOption={callback}/>
+                <div style={{padding: '10px'}}>
+                    <h3>With title</h3>
+                    <CustomCheckbox title={'Checkbox title'} onChangeOption={callback}/>
+                </div>
 
-                <h3>Unchecked</h3>
-                <CustomCheckbox checked={false} onChangeOption={callback}/>
+                <div style={{padding: '10px'}}>
+                    <h3>Unchecked</h3>
+                    <CustomCheckbox checked={false} onChangeOption={callback}/>
+                </div>
+            </div>
+
+            <hr/>
+
+            <div style={{padding: '20px'}}>
+                <h2>Editable spans</h2>
+
+                <div style={{padding: '10px'}}>
+                    <h3>Default</h3>
+                    <CustomEditableSpan onChangeOption={callback}/>
+                </div>
+
+                <div style={{padding: '10px'}}>
+                    <h3>Controlled value</h3>
+                    <CustomEditableSpan onChangeOption={callback} value={"Controlled value"}/>
+                </div>
+
+                <div style={{padding: '10px'}}>
+                    <h3>Error</h3>
+                    <CustomEditableSpan onChangeOption={callback} error={'Error message'}/>
+                </div>
+
             </div>
         </>
     )

@@ -19,16 +19,12 @@ const Label = styled.label`
     border-radius: 5px;
     box-shadow: rgba(50, 151, 211, .3) 0 0 0 2px;
     cursor: pointer;
-
     &:hover {
       box-shadow: rgba(50, 151, 211, .3) 0 0 0 4px;
     }
-
     &:checked {
       background-color: #405cf5;
-
     }
-
     &:checked:after {
       width: 20px;
       height: 20px;
@@ -39,7 +35,6 @@ const Label = styled.label`
       text-align: center;
     }
   }
-
   span {
     cursor: pointer;
     padding-left: 4px;
@@ -57,16 +52,12 @@ export const CustomCheckbox = (props: CustomCheckboxPropsType) => {
 
     const onChange = (e: ChangeEvent<HTMLInputElement>) => {
         if (props.checked !== undefined) {
-            setChecked(props.checked)
             props.onChangeOption && props.onChangeOption(checked)
         } else {
             setChecked(e.target.checked)
             props.onChangeOption && props.onChangeOption(e.target.checked)
         }
-
-
     }
-
 
     return (
         <Label>

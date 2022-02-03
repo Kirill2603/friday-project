@@ -32,17 +32,14 @@ const Button = styled.button<CustomButtonPropsType>`
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
-
   &:hover {
     box-shadow: rgba(50, 151, 211, .3) 0 0 0 4px;
   }
-
   &:disabled {
     box-shadow: none;
     background-color: #a0aec0;
     cursor: default;
   }
-
   &:active {
     box-shadow: rgba(50, 151, 211, .5) 0 0 0 4px;
   }
