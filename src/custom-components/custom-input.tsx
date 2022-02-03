@@ -26,7 +26,7 @@ const Input = styled.input<CustomInputPropsType>`
   font-size: 100%;
   font-weight: 600;
   outline: none;
-  box-shadow: ${props => props.error ? "#fc8181 0 0 0 2px" : 'none'};
+  box-shadow: ${props => props.error ? "#fc8181 0 0 0 2px": 'none'};
   ::placeholder {
     color: ${props => props.error ? "#fc8181": 'none'};
     font-size: 90%;
@@ -64,8 +64,6 @@ export const CustomInput = (props: CustomInputPropsType) => {
     }
 
     const onBlurHandler = (e: React.FocusEvent<HTMLInputElement>) => {
-        setInputValue(e.currentTarget.value)
-        props.onChangeOption && props.onChangeOption(inputValue)
         props.onBlur && props.onBlur(e)
     }
 

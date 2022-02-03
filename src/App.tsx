@@ -10,6 +10,10 @@ import {NewPassword} from "./pages/new-password";
 import {Profile} from "./pages/profile";
 import {Test} from "./pages/test";
 import {Home} from "./pages/home";
+import {useDispatch, useSelector} from "react-redux";
+import {TestAC} from "./store/app-reducer";
+import {AppRootStateType} from "./store/store";
+import {CustomButton} from "./custom-components/custom-button";
 
 export const path = {
     home: '/' ,
@@ -22,6 +26,17 @@ export const path = {
 }
 
 function App() {
+
+    const dispatch = useDispatch()
+
+    const state = useSelector<AppRootStateType>(state => state.app.test)
+
+    const testReducer = () => {
+        setTimeout(() => {dispatch(TestAC("HELLO"))
+            console.log(state)}, 2000)
+
+    }
+
     return (<>
             <Routes>
                 <Route path={'/'} element={<Layout />}>
@@ -35,6 +50,8 @@ function App() {
                     <Route path='*' element={<Page404/>}/>
                 </Route>
             </Routes>
+
+            <CustomButton onChangeOption={testReducer}>Test</CustomButton>
         </>
     );
 }

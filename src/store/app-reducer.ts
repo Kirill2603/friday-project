@@ -6,10 +6,10 @@ const initialState: InitialStateType = {
     test: 'test',
 }
 
-export const appReducer = (state: InitialStateType, action: ActionsTypes): InitialStateType => {
+export const appReducer = (state = initialState, action: ActionsTypes): InitialStateType => {
     switch (action.type) {
         case 'TEST':
-            return {...state}
+            return {...state, test: action.test}
         default:
             return state
     }
