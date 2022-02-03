@@ -3,7 +3,7 @@ export type InitialStateType = {
 }
 
 const initialState: InitialStateType = {
-    test: 'test',
+    test: 'Initial state',
 }
 
 export const appReducer = (state = initialState, action: ActionsTypes): InitialStateType => {

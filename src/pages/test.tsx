@@ -3,6 +3,9 @@ import {CustomButton} from "../custom-components/custom-button";
 import {CustomInput} from "../custom-components/custom-input";
 import {CustomCheckbox} from "../custom-components/custom-checkbox";
 import {CustomEditableSpan} from "../custom-components/custom-editable-span";
+import {useDispatch, useSelector} from "react-redux";
+import {rootReducerType} from "../store/store";
+import {TestAC} from "../store/app-reducer";
 
 export const Test = () => {
 
@@ -10,7 +13,19 @@ export const Test = () => {
         console.log(value)
     }
 
+    const dispatch = useDispatch()
+
+    const testReducer = useSelector<rootReducerType , string>(state => state.app.test)
+
+    const test = () => {
+        dispatch(TestAC("State was changed"))
+    }
+
     return (<>
+            <hr/>
+
+            <CustomButton onChangeOption={test}>Test</CustomButton>
+            <div>{testReducer}</div>
 
             <hr/>
 
